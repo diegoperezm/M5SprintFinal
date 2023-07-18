@@ -3,9 +3,9 @@
 
 <%
 HttpSession s = request.getSession();
- 
-if( null == s.getAttribute("user")){
-    response.sendRedirect("./login.jsp");
+
+if (null == s.getAttribute("user")) {
+	response.sendRedirect("./login.jsp");
 }
 %>
 
@@ -41,7 +41,9 @@ if( null == s.getAttribute("user")){
 							<input type="email" class="form-control" id="correo"
 								placeholder="nombre@correo.com">
 						</div>
-						<input type="submit" value="Crear capacitación">
+						<div >
+							<input type="submit" value="Crear capacitación">
+						</div>
 					</form>
 				</div>
 			</div>
