@@ -3,3 +3,10 @@
 .btn-crearUsuario {
 	display: block;
 }
+
+div .est {
+    background-color: #ffffff;
+    padding: 1.5em;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.508);
+    border-radius: 7px;
+}
