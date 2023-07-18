@@ -10,3 +10,12 @@ div .est {
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.508);
     border-radius: 7px;
 }
+
+body{
+	background-image: url("https://fondosmil.com/fondo/17010.jpg");
+	color: white;
+}
+
+h2{
+	color:black;
+}

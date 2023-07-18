@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="mb-3">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/M5Grupal3">Menu</a>
 			<button class="navbar-toggler" type="button"
@@ -22,6 +22,10 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="./listarCapacitaciones.jsp">Listar
 							Capacitación</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="./crearUsuario.jsp">Crear usuarios</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="./listarUsuario.jsp">Listar usuarios</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="./cerrarSesion.jsp">Cerrar sesión</a></li>
 				</ul>

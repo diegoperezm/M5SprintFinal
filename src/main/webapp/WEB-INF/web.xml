@@ -39,4 +39,24 @@
     <servlet-name>CrearUsuario</servlet-name>
     <url-pattern>/CrearUsuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarUsuarios</display-name>
+    <servlet-name>ListarUsuarios</servlet-name>
+    <servlet-class>g1Servlets.ListarUsuarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarUsuarios</servlet-name>
+    <url-pattern>/ListarUsuarios</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarUsuario</display-name>
+    <servlet-name>EditarUsuario</servlet-name>
+    <servlet-class>g1Servlets.EditarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarUsuario</servlet-name>
+    <url-pattern>/EditarUsuario</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="conexion.Dbconn"%>
+<%
+HttpSession s = request.getSession();
+
+if (null == s.getAttribute("user")) {
+	response.sendRedirect("./login.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +19,7 @@
 	integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
 	crossorigin="anonymous" />
 
-<link rel="stylesheet" href="css/style.css">
+<link href="./styles/style.css" rel="stylesheet" />
 
 <!-- -->
 
@@ -30,42 +39,46 @@
 <title>Listado de usuarios</title>
 </head>
 <body>
+	<%
+	Class.forName(Dbconn.driver);
+	Connection conn = DriverManager.getConnection(Dbconn.url, Dbconn.user, Dbconn.password);
+	System.out.println("Conexion exitosa");
+
+	PreparedStatement st = conn.prepareStatement("select * from Usuarios");
+	ResultSet rs = st.executeQuery();
+	%>
+	<jsp:include page="/menu.jsp" />
+
 	<div class="container mt-5 w-75 justify-content-center">
 		<div class="est">
 
-			<h2>Estadisticas</h2>
+			<h2>Listar Usuarios</h2>
 			<br>
-
 			<table id="dataTable" class="table display responsive nowrap"
 				style="width: 100%">
 				<thead class="table">
 					<tr>
 						<th>ID</th>
-						<th>Nombre Cliente</th>
-						<th>Edad</th>
-						<th>Genero</th>
-						<th>Correo Electrónico</th>
-						<th>Teléfono</th>
-						<th>Producto</th>
-						<th>Marca</th>
-						<th>Precio</th>
-						<th>Acción</th>
+						<th>Nombre Usuario</th>
+						<th>Tipo</th>
+						<th>Acciones</th>
 					</tr>
 				</thead>
+				<%
+				while (rs.next()) {
+				%>
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>Felipe Maza</td>
-						<td>21</td>
-						<td>Hombre</td>
-						<td>felipe@algo.cl</td>
-						<td>952364125</td>
-						<td>iPhone 14</td>
-						<td>Apple</td>
-						<td>$799</td>
-						<td><input type="submit" class="btn btn-info" value="Editar"></td>
+						<td><%=rs.getInt("id")%></td>
+						<td><%=rs.getString("nombre")%></td>
+						<td><%=rs.getString("tipo")%></td>
+						<td><a href="editarUsuario.jsp?id=<%=rs.getInt("id")%>"
+							class="btn btn-info">Editar</a></td>
 					</tr>
 				</tbody>
+				<%
+				}
+				%>
 			</table>
 		</div>
 	</div>

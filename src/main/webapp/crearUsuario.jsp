@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+HttpSession s = request.getSession();
+
+if (null == s.getAttribute("user")) {
+	response.sendRedirect("./login.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,18 +27,19 @@
 				<div class="col">
 					<form action="./CrearUsuario" method="post">
 						<div class="form-group">
-							<label for="nombre">Nombre:</label>
-								 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
-
-							<label class="mt-2" for="tipo">Seleccione un tipo:</label>
-							<select class="custom-select" id="tipo" name="tipo" required>
+							<label for="nombre">Nombre:</label> <input type="text"
+								class="form-control" id="nombre" name="nombre"
+								placeholder="nombre"> <label class="mt-2" for="tipo">Seleccione
+								un tipo:</label> <select class="custom-select" id="tipo" name="tipo"
+								required>
 								<option value="Cliente">Cliente</option>
 								<option value="Administrativo">Administrativo</option>
 								<option value="Profesional">Profesional</option>
 							</select>
-							
+
 						</div>
-						<input class="btn btn-success btn-crearUsuario" type="submit" value="Crear usuario" onClick="window.location.href='index.jsp'">
+						<input class="btn btn-success btn-crearUsuario" type="submit"
+							value="Crear usuario" onClick="window.location.href='listarUsuario.jsp'">
 					</form>
 				</div>
 			</div>

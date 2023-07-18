@@ -12,10 +12,10 @@ import java.sql.PreparedStatement;
 
 import conexion.Dbconn;
 
-public class CrearUsuario extends HttpServlet {
+public class EditarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CrearUsuario() {
+	public EditarUsuario() {
 		super();
 	}
 
@@ -39,11 +39,13 @@ public class CrearUsuario extends HttpServlet {
 			Connection conn = DriverManager.getConnection(Dbconn.url, Dbconn.user, Dbconn.password);
 			System.out.println("Conexion exitosa");
 
-			PreparedStatement st = conn.prepareStatement("insert into Usuarios(nombre, tipo) values (?,?)");
+			PreparedStatement st = conn.prepareStatement("update Usuarios set nombre=?, tipo=? where id=?");
 
 			// definir tipos de la tabla
 			st.setString(1, request.getParameter("nombre"));
 			st.setString(2, request.getParameter("tipo"));
+			st.setInt(3, Integer.valueOf(request.getParameter("id")));
+			
 
 			// ejecutar query
 			st.executeUpdate();
