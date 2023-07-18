@@ -42,11 +42,8 @@ public class CrearUsuario extends HttpServlet {
 			PreparedStatement st = conn.prepareStatement("insert into Usuarios(nombre, tipo) values (?,?)");
 
 			// definir tipos de la tabla
-			st.setString(1, "algo");
-			st.setString(2, "Administrativo");
-			//st.setInt(1, Integer.valueOf(request.getParameter("id")));
-			//st.setString(2, request.getParameter("nombre"));
-			//st.setString(3, request.getParameter("tipo"));
+			st.setString(1, request.getParameter("nombre"));
+			st.setString(2, request.getParameter("tipo"));
 
 			// ejecutar query
 			st.executeUpdate();
