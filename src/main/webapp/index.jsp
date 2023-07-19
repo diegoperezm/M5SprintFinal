@@ -3,9 +3,9 @@
 
 <%
 HttpSession s = request.getSession();
- 
-if( null == s.getAttribute("user")){
-    response.sendRedirect("./login.jsp");
+
+if (null == s.getAttribute("user")) {
+	response.sendRedirect("./login.jsp");
 }
 %>
 
@@ -23,13 +23,21 @@ if( null == s.getAttribute("user")){
 <title>Empresa Prevención De Riesgos</title>
 </head>
 <body>
-<jsp:include page="/menu.jsp"/> 
+	<jsp:include page="/menu.jsp" />
 	<div>
 		<div class="container" align="center">
 			<div class="row">
 				<div class="col">
-					<h1>Empresa Prevención De Riesgos</h1>
-					<p>lorem lorem lorem lorem lorem lorem lorem lorem loremlorem</p>
+					<div class="px-4 pt-5 my-5 text-center">
+						<h1 class="fw-bold text-body-emphasis">Empresa Prevención De
+							Riesgos</h1>
+						<div class="col-lg-6 mx-auto ">
+							<p class="about w-100 lead mt-5 mb-4 text-justify">Somos la compañía
+								líder en Prevención de Riesgos Laborales y nuestro objetivo es
+								garantizar la seguridad en tu compañía y cuidar de la salud de
+								tus profesionales. 
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
