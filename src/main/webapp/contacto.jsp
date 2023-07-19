@@ -25,7 +25,7 @@ if (null == s.getAttribute("user")) {
 <body>
 	<jsp:include page="/menu.jsp" />
 	<div>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col center">
 					<form action="./MostrarComentarios" method="post">
@@ -39,7 +39,7 @@ if (null == s.getAttribute("user")) {
 							<label for="comentarios" class="form-label">Comentarios</label>
 							<textarea class="form-control" id="comentarios" name="comentarios" rows="3"></textarea>
 						</div>
-						<input class="btn btn-success btn-crearUsuario" type="submit"
+						<input class="btn btn-warning btn-crearUsuario" type="submit"
 							value="Enviar Comentario">
 
 					</form>

@@ -36,7 +36,7 @@ if (null == s.getAttribute("user")) {
 	<jsp:include page="/menu.jsp" />
 
 	<div>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col">
 					<form action="./EditarUsuario" method="post">
@@ -46,16 +46,14 @@ if (null == s.getAttribute("user")) {
 							<label for="nombre">Nombre:</label>
 								<input type="text" class="form-control" name="nombre" value="<%=rs.getString("nombre")%>">
 							<label class="mt-2" for="tipo">Seleccione un tipo:</label>
-							<select
-								class="custom-select" name="tipo" required>
+							<select class="custom-select" name="tipo" required>
 								<option value="Cliente">Cliente</option>
 								<option value="Administrativo">Administrativo</option>
 								<option value="Profesional">Profesional</option>
 							</select>
 						</div>
-						<input class="btn btn-success btn-editarUsuario" type="submit"
-							value="Editar usuario"
-							onClick="window.location.href='listarUsuario.jsp'">
+						<input class="btn btn-warning btn-editarUsuario" type="submit"
+							value="Editar usuario">
 					</form>
 				</div>
 			</div>

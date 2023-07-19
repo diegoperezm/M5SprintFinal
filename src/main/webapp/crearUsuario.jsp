@@ -22,7 +22,7 @@ if (null == s.getAttribute("user")) {
 <body>
 	<jsp:include page="/menu.jsp" />
 	<div>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col">
 					<form action="./CrearUsuario" method="post">
@@ -38,8 +38,8 @@ if (null == s.getAttribute("user")) {
 							</select>
 
 						</div>
-						<input class="btn btn-success btn-crearUsuario" type="submit"
-							value="Crear usuario" onClick="window.location.href='listarUsuario.jsp'">
+						<input class="btn btn-warning btn-crearUsuario" type="submit"
+							value="Crear usuario">
 					</form>
 				</div>
 			</div>

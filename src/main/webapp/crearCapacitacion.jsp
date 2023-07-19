@@ -25,34 +25,28 @@ if (null == s.getAttribute("user")) {
 <body>
 	<jsp:include page="/menu.jsp" />
 	<div>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col center">
 					<form action="./CrearCapacitacion" method="post">
-						<div class="form-group">
-							<label for="nombre">Nombre:</label> <input type="text"
-								class="form-control" id="nombre" placeholder="nombre"> <label
-								for="apellido">Apellido:</label> <input type="text"
-								class="form-control" id="apellido" placeholder="apellido">
+						<h1>Crear capacitación:</h1>
+						<div class="mb-3">
+							<label for="nombre" class="form-label">Nombre:</label> <input
+								type="text" class="form-control" id="nombre" name="nombre"
+								placeholder="nombre apellido">
+						</div>
+						<div class="mb-3">
+							<label for="detalle" class="form-label">Detalle:</label>
+							<textarea class="form-control" id="detalle" name="detalle" rows="3"></textarea>
+						</div>
+						<input class="btn btn-warning btn-crearUsuario" type="submit"
+							value="Crear capacitacion">
 
-							<label for="capacitacion">Nombre Capacitación:</label> <input
-								type="text" class="form-control" id="capacitacion"
-								placeholder="capacitación"> <label for="correo">Correo:</label>
-							<input type="email" class="form-control" id="correo"
-								placeholder="nombre@correo.com">
-						</div>
-						<div >
-							<input type="submit" value="Crear capacitación">
-						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
 </body>
 </html>
 

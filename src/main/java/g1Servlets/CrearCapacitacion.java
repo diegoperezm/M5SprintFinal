@@ -6,22 +6,55 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import conexion.Dbconn;
 
 public class CrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
-    public CrearCapacitacion() {
-        super();
-    }
-
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/crearCapacitacion.jsp").forward(request, response);
+	public CrearCapacitacion() {
+		super();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Validar que existe la base de datos
+		try {
+			Class.forName(Dbconn.driver);
+		} catch (ClassNotFoundException e) {
+			System.out.println("No se encontro la BD" + e);
+		}
+
+		// Llamamos a la base de datos
+		try {
+
+			Connection conn = DriverManager.getConnection(Dbconn.url, Dbconn.user, Dbconn.password);
+			System.out.println("Conexion exitosa");
+
+			PreparedStatement st = conn.prepareStatement("insert into Capacitaciones(nombre, detalle) values (?,?)");
+
+			// definir tipos de la tabla
+			st.setString(1, request.getParameter("nombre"));
+			st.setString(2, request.getParameter("detalle"));
+
+			// ejecutar query
+			st.executeUpdate();
+			st.close();
+			conn.close();
+
+			response.sendRedirect("listarCapacitaciones.jsp");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

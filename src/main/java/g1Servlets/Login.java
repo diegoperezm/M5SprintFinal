@@ -20,8 +20,6 @@ public class Login extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// getServletContext().getRequestDispatcher("/login.jsp").forward(request,
-		// response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +36,7 @@ public class Login extends HttpServlet {
 
 			session.setAttribute("user", user);
 			session.setAttribute("pass", pass);
-			response.sendRedirect("./contacto.jsp");
+			response.sendRedirect("./index.jsp");
 
 		} else {
 			session.invalidate();

@@ -25,7 +25,7 @@ if( null == s.getAttribute("user")){
 <body>
 <jsp:include page="/menu.jsp"/> 
 	<div>
-		<div class="container-fluid">
+		<div class="container" align="center">
 			<div class="row">
 				<div class="col">
 					<h1>Empresa Prevención De Riesgos</h1>

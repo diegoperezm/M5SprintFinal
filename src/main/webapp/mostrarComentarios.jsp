@@ -19,8 +19,8 @@
 			<div class="row">
 				<div class="col">
 					<div class="card">
-						<div class="card-header">Comentarios</div>
-						<div class="card-body">
+						<div class="card-header text-success">Comentarios</div>
+						<div class="card-body text-dark">
 							<blockquote class="blockquote mb-0">
 								<p class="mb-5">
 									<%=request.getParameter("comentarios")%>
