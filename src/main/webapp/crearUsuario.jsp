@@ -25,7 +25,7 @@ if (null == s.getAttribute("user")) {
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<form action="./ControladorUsuarios" method="post">
+					<form action="./CrearUsuario" method="post">
 						<div class="form-group">
 							<label for="nombre">Nombre:</label> <input type="text"
 								class="form-control" id="nombre" name="nombre"

@@ -28,12 +28,12 @@ if (null == s.getAttribute("user")) {
 		<div class="container">
 			<div class="row">
 				<div class="col center">
-					<form action="./ControladorCapacitaciones" method="post">
+					<form action="./CrearCapacitacion" method="post">
 						<h1>Crear capacitación:</h1>
 						<div class="mb-3">
 							<label for="nombre" class="form-label">Nombre:</label> <input
 								type="text" class="form-control" id="nombre" name="nombre"
-								placeholder="nombre apellido" required>
+								placeholder="nombre capacitación" required>
 						</div>
 						<div class="mb-3">
 							<label for="detalle" class="form-label">Detalle:</label>

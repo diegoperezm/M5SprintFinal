@@ -51,7 +51,6 @@ public class Login extends HttpServlet {
 			}
 			rs.close();
 			st.close();
-			// conn.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();

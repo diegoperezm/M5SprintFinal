@@ -31,26 +31,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>CrearUsuario</display-name>
-    <servlet-name>CrearUsuario</servlet-name>
-    <servlet-class>g1Servlets.CrearUsuario</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CrearUsuario</servlet-name>
-    <url-pattern>/CrearUsuario</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ListarUsuarios</display-name>
-    <servlet-name>ListarUsuarios</servlet-name>
-    <servlet-class>g1Servlets.ListarUsuarios</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListarUsuarios</servlet-name>
-    <url-pattern>/ListarUsuarios</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>MostarComentarios</display-name>
     <servlet-name>MostarComentarios</servlet-name>
     <servlet-class>g1Servlets.MostarComentarios</servlet-class>
@@ -71,36 +51,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>CrearCapacitacion</display-name>
-    <servlet-name>CrearCapacitacion</servlet-name>
-    <servlet-class>g1Servlets.CrearCapacitacion</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CrearCapacitacion</servlet-name>
-    <url-pattern>/CrearCapacitacion</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladorCapacitaciones</display-name>
-    <servlet-name>ControladorCapacitaciones</servlet-name>
-    <servlet-class>controller.ControladorCapacitaciones</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladorCapacitaciones</servlet-name>
-    <url-pattern>/ControladorCapacitaciones</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladorUsuarios</display-name>
-    <servlet-name>ControladorUsuarios</servlet-name>
-    <servlet-class>controller.ControladorUsuarios</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladorUsuarios</servlet-name>
-    <url-pattern>/ControladorUsuarios</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>EditarUsuario</display-name>
     <servlet-name>EditarUsuario</servlet-name>
     <servlet-class>controller.EditarUsuario</servlet-class>
@@ -108,5 +58,45 @@
   <servlet-mapping>
     <servlet-name>EditarUsuario</servlet-name>
     <url-pattern>/EditarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarCapacitaciones</display-name>
+    <servlet-name>ListarCapacitaciones</servlet-name>
+    <servlet-class>controller.ListarCapacitaciones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarCapacitaciones</servlet-name>
+    <url-pattern>/ListarCapacitaciones</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CrearCapacitacion</display-name>
+    <servlet-name>CrearCapacitacion</servlet-name>
+    <servlet-class>controller.CrearCapacitacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrearCapacitacion</servlet-name>
+    <url-pattern>/CrearCapacitacion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarUsuarios</display-name>
+    <servlet-name>ListarUsuarios</servlet-name>
+    <servlet-class>controller.ListarUsuarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarUsuarios</servlet-name>
+    <url-pattern>/ListarUsuarios</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CrearUsuario</display-name>
+    <servlet-name>CrearUsuario</servlet-name>
+    <servlet-class>controller.CrearUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrearUsuario</servlet-name>
+    <url-pattern>/CrearUsuario</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,7 +1,6 @@
 package controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,27 +13,16 @@ import dao.CapacitacionesDAO;
 import java.util.ArrayList;
 import model.Capacitaciones;
 
-public class ControladorCapacitaciones extends HttpServlet {
+public class CrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ControladorCapacitaciones() {
+	public CrearCapacitacion() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		List<Capacitaciones> listaCapacitaciones = new ArrayList<Capacitaciones>();
-        try {
-			listaCapacitaciones  = CapacitacionesDAO.getList();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-        request.setAttribute("listaCapacitaciones", listaCapacitaciones);
-        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
-
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -64,3 +52,6 @@ public class ControladorCapacitaciones extends HttpServlet {
 	}
 
 }
+
+
+

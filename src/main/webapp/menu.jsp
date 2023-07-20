@@ -20,12 +20,12 @@
 						aria-current="page" href="./crearCapacitacion.jsp">Crear
 							Capacitación</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="./ControladorCapacitaciones">Listar
-							Capacitación</a></li>
+						aria-current="page" href="./ListarCapacitaciones">Listar
+							Capacitaciones</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="./crearUsuario.jsp">Crear usuarios</a></li>
+						aria-current="page" href="./crearUsuario.jsp">Crear usuario</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="./ControladorUsuarios">Listar usuarios</a></li>
+						aria-current="page" href="./ListarUsuarios">Listar usuarios</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="./cerrarSesion.jsp">Cerrar sesión</a></li>
 				</ul>
