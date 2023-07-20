@@ -40,13 +40,7 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			Class.forName(Dbconn.driver);
-		} catch (ClassNotFoundException e) {
-			System.out.println("No se encontro la BD" + e);
-		}
-
-		try {
-			Connection conn = DriverManager.getConnection(Dbconn.url, Dbconn.user, Dbconn.password);
+			Connection conn = Dbconn.getConnection(); 
 			System.out.println("Conexion exitosa");
 			PreparedStatement st = conn.prepareStatement("select * from login");
 			ResultSet rs = st.executeQuery();
@@ -57,7 +51,7 @@ public class Login extends HttpServlet {
 			}
 			rs.close();
 			st.close();
-			conn.close();
+			// conn.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();

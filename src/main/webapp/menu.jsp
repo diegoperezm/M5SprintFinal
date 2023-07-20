@@ -20,7 +20,7 @@
 						aria-current="page" href="./crearCapacitacion.jsp">Crear
 							Capacitación</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="./listarCapacitaciones.jsp">Listar
+						aria-current="page" href="./ControladorCapacitaciones">Listar
 							Capacitación</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="./crearUsuario.jsp">Crear usuarios</a></li>
