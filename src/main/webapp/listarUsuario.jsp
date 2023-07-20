@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="conexion.Dbconn"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.Usuarios"%>
+
 <%
 HttpSession s = request.getSession();
 
@@ -39,14 +41,6 @@ if (null == s.getAttribute("user")) {
 <title>Listado de usuarios</title>
 </head>
 <body>
-	<%
-	Class.forName(Dbconn.driver);
-	Connection conn = DriverManager.getConnection(Dbconn.url, Dbconn.user, Dbconn.password);
-	System.out.println("Conexion exitosa");
-
-	PreparedStatement st = conn.prepareStatement("select * from Usuarios");
-	ResultSet rs = st.executeQuery();
-	%>
 	<jsp:include page="/menu.jsp" />
 
 	<div class="container mt-5 w-75 justify-content-center">
@@ -64,23 +58,27 @@ if (null == s.getAttribute("user")) {
 						<th>Acciones</th>
 					</tr>
 				</thead>
-				<%
-				while (rs.next()) {
-				%>
 				<tbody>
+					<%
+					List<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("listaUsuarios");
+					for (Usuarios u : lista) {
+					%>
 					<tr>
-						<td><%=rs.getInt("id")%></td>
-						<td><%=rs.getString("nombre")%></td>
-						<td><%=rs.getString("tipo")%></td>
-						<td><a href="editarUsuario.jsp?id=<%=rs.getInt("id")%>"
+						<td><%=u.getId()%></td>
+						<td><%=u.getNombre()%></td>
+						<td><%=u.getTipo()%></td>
+						<td><a href="editarUsuario.jsp?id=<%=u.getId()%>&nombre=<%=u.getNombre() %>"
 							class="btn btn-info">Editar</a></td>
 					</tr>
 				</tbody>
-				<%
-				}
-				%>
+				<%}%>
+
 			</table>
 		</div>
 	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
 </body>
 </html>

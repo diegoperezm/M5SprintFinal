@@ -33,11 +33,11 @@ if (null == s.getAttribute("user")) {
 						<div class="mb-3">
 							<label for="nombre" class="form-label">Nombre:</label> <input
 								type="text" class="form-control" id="nombre" name="nombre"
-								placeholder="nombre apellido">
+								placeholder="nombre apellido" required>
 						</div>
 						<div class="mb-3">
 							<label for="detalle" class="form-label">Detalle:</label>
-							<textarea class="form-control" id="detalle" name="detalle" rows="3"></textarea>
+							<textarea class="form-control" id="detalle" name="detalle" rows="3" required></textarea>
 						</div>
 						<input class="btn btn-warning btn-crearUsuario" type="submit"
 							value="Crear capacitacion">

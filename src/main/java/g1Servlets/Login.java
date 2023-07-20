@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
 		try {
 			Connection conn = Dbconn.getConnection(); 
 			System.out.println("Conexion exitosa");
-			PreparedStatement st = conn.prepareStatement("select * from Login");
+			PreparedStatement st = conn.prepareStatement("select * from login");
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {

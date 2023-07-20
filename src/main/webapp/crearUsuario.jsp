@@ -25,11 +25,11 @@ if (null == s.getAttribute("user")) {
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<form action="./CrearUsuario" method="post">
+					<form action="./ControladorUsuarios" method="post">
 						<div class="form-group">
 							<label for="nombre">Nombre:</label> <input type="text"
 								class="form-control" id="nombre" name="nombre"
-								placeholder="nombre"> <label class="mt-2" for="tipo">Seleccione
+								placeholder="nombre" required> <label class="mt-2" for="tipo">Seleccione
 								un tipo:</label> <select class="custom-select" id="tipo" name="tipo"
 								required>
 								<option value="Cliente">Cliente</option>
