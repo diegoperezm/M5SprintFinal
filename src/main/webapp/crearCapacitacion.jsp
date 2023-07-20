@@ -20,7 +20,7 @@ if (null == s.getAttribute("user")) {
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link href="styles/style.css" rel="stylesheet" />
-<title>Empresa Prevención De Riesgos</title>
+<title>Crear capacitación</title>
 </head>
 <body>
 	<jsp:include page="/menu.jsp" />
