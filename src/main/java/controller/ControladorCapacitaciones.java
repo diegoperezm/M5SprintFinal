@@ -40,11 +40,27 @@ public class ControladorCapacitaciones extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Capacitaciones capacitacion = new Capacitaciones(); 
-		capacitacion.setNombre("nombre nombre");
-		capacitacion.setDetalle("detalle detalles");
-        //request.setAttribute("listaCapacitaciones", listaCapacitaciones);
-        //request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		capacitacion.setNombre(request.getParameter("nombre"));
+		capacitacion.setDetalle(request.getParameter("detalle"));
+        CapacitacionesDAO d = new CapacitacionesDAO();	
+	    try {
+			d.addCapacitacion(capacitacion);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}	
+		
+
+		List<Capacitaciones> listaCapacitaciones = new ArrayList<Capacitaciones>();
+        try {
+			listaCapacitaciones  = CapacitacionesDAO.getList();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        request.setAttribute("listaCapacitaciones", listaCapacitaciones);
+        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
+
 	}
 
 }
